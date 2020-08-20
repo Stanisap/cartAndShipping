@@ -1,61 +1,63 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+Тестовое задание
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Прежде чем приступать, внимательно ознакомьтесь со всем документом. По
+завершению выполнения тестового задания, разместите код в публичном github
+репозитории и вышлите ссылку на него. Не забудьте добавить readme с инструкцией
+по запуску проекта.
 
-## About Laravel
+Задача:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    Реализовать 2 шага оформления заказа - страницы cart и shipping.
+    Условия:
+    
+        ● Респонсив верстка.
+        ● Не использовать готовых UI фреймворков (типа bootstrap).
+        
+Опционально:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    1. Использование на стороне клиента ReactJS+Redux / VueJS+Vuex /
+    Angular+NgRx будет большим плюсом.
+    2. Реализация собственного API сервера с использованием Express / Laravel /
+    Django будет большим плюсом.
+    3. Реализация Skeleton loader для страницы Cart будет большим плюсом.
+    4. Получать информацию о продуктах с внешнего API (например www.mockapi.io ).
+    
+Спецификация - шаг 1 - Cart
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    ● Количество продуктов отображать в input поле (type number). Максимальное
+    возможное значение 50.
+    ● Кнопки +/-, увеличивают/уменьшают количество продукта в корзине.
+    ● Иконка “trash” удаляет продукт из корзины.
+    ● Нажатие на кнопку “buy” переводит на следующий шаг - страница Shipping.
+    ● Страница Cart должна быть доступна по url - /cart .
+    
+Спецификация - шаг 2 - Shipping
 
-## Learning Laravel
+    ● Предусмотреть валидацию полей.
+    ● Кнопка “pay” не активна (disabled), если хотя бы одно из полей не валидно.
+    ● Shipping options может иметь 3 значения:
+    Free shipping (значение по умолчанию)
+    Express shipping- additional 9.99 €
+    Courier shipping - additional 19.99 €
+    Если сумма заказа превышает 300 €, доставка будет “Free express shipping”.
+    ● Страница Shipping должна быть доступна по url - /shipping .
+    
+Как запустить проект
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    Нужно:
+    
+        1 - PHP;
+        2 - GIT;
+        2 - Composer;
+        3 - Laravel;
+        
+    Запуск проекта:
+    
+        1 - выпонеям команду git clone https://https://github.com/Stanisap/cartAndShipping.git
+        2 - создаем в корне проeкта файд .env и копируем содержимое зи файла .env.examplе в соданный файл
+        3 - в файле .env указываем настройки подключения к вашей бд
+        4 - выполняем команду "php artisan migrate" для миграции таблиц базы данных
+        5 - заполняем таблыцы тестовами данными (есть test.sql файл в корне проекта с запросом для их заполнения)
+        6 - выплняем команду "php artisan serve" или "php artisan serve --port=<number free port>"
+        7 - копируем сгенерированую ссылку и переходим по ней (добавляеь "/cart")
+        8 - проект должен запуститься

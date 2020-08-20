@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'cart'], function () {
+    Route::get('/', "CartController@index")->name('cart');
+
+    Route::get('/add/{product}', 'CartController@cartAdd')->name('cart-add');
+    Route::get('/remove/{product}', 'CartController@cartRemove')->name('cart-remove');
+    Route::get('/remove-all/{product}', 'CartController@cartAllRemove')->name('cart-all-remove');
+
 });
+
+
+
+Route::get('/shipping', 'ShippingController@index')->name('shipping');
+Route::post('/shipping/confirm', 'ShippingController@confirm')->name('shipping-confirm');
