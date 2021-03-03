@@ -61,3 +61,4 @@
         6 - выполняем команду "php artisan serve" или "php artisan serve --port=<number free port>"
         7 - копируем сгенерированную ссылку и переходим по ней (добавляем к ссылке "/cart")
         8 - проект должен запуститься
+dfsfsadfasf
